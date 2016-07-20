@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sistema Integral de Infracciones</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+ <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+   <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="dist/css/ionicons.min.css">
+ <!-- daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5shiv.min.js"></script>
+  <script src="dist/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  
+  <header class="main-header"/></header>  
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar"></aside>
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Alta de Infracción
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-book"></i> Infracciones</a></li>
+        <li class="active">Alta</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+	<form id="form1" role="form">	
+	 <div class="row">
+	<section class="col-lg-6 connectedSortable">		
+			
+			<!-- Datos generales -->
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<h3 class="box-title">Datos Generales</h3>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					</div>
+				</div>         
+				<div class="box-body">
+					<div class="form-group">
+						<div class="row">
+						
+							<div class="col-xs-6">
+								<div class="form-group">
+								<label for="example1">*Fecha y Hora: </label> 
+								<div class="input-group date ">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control" id="datepicker" data-date-format="dd/mm/yyyy">					
+								</div>
+								</div>
+							</div>
+						   <div class="col-xs-6">
+							<div class="form-group">
+							  <label for="example2">Infracción Impresa:</label>
+							  <div class="input-group">
+								 <span class="input-group-addon"><i class="fa fa-print"></i></span>
+								 <input type="text" class="form-control" id="example2">					
+							  </div>
+							</div>
+							</div>
+						</div>
+												
+						<div class="row">
+							<div class="col-xs-6">  
+								<div class="form-group">
+								<label>*Estado:</label>
+									 <div class="input-group">
+									 <span class="input-group-addon"><img src="dist/img/capitolio.png" class="user-image" alt="User Image"></span>
+									 <select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Ciudad de México</option>
+										<option>Estado de México</option>
+									</select>
+								</div>
+								</div>
+								  <!-- /.form-group -->								  
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+							    <label>Sector: </label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-pie-chart"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>AOB-01</option>
+										<option>AOB-02</option>
+										<option>AOB-02</option>
+									</select>
+								</div>
+								</div>
+							<!-- /.form-group -->
+							</div>
+							
+						</div>	
+						
+						<div class="row">
+							
+							<div class="col-xs-6">  
+								<div class="form-group">
+								<label>Unidad Territorial :</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-random"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>San Ángel</option>
+										<option>Altavista</option>
+										<option>Florida </option>
+										<option>Periferico</option>
+										<option>Río Consulado</option>
+										<option>Buenavista</option>
+										<option>Pueblo Tizapan </option>
+									</select>
+								</div>
+								  <!-- /.form-group -->
+								  </div>
+							</div>
+							<div class="col-xs-6">							
+								<div class="form-group">
+									<label> *Responsable del Vehículo:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Ausente</option>
+										<option>Recibió</option>
+										<option>Se nego a recibir</option>
+									</select>
+									</div>
+								</div>
+						<!-- /.form-group -->
+					</div>	
+						</div>	
+			<h4>Arrastre</h4>	
+			<hr/>
+			<div class="row">					
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label>Con Arrastre:</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-arrows"></i></span>	
+								<select class="form-control ">
+									<option selected="selected">Seleccione</option>
+									<option>Sin Arrastre</option>
+									<option>Arrastre por Infracción</option>
+									<option>Arrastre por Abandono</option>
+								</select>
+							</div>	
+						</div>
+						<!-- /.form-group -->
+					</div>
+					<div class="col-xs-6">
+							<div class="form-group">
+								<label>Tipo de Unidad:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-car"></i></span>	
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Grúa</option>
+										<option>Patrulla/Moto</option>
+										<option>Pie a Tierra</option> 
+									</select>
+								</div>	
+							</div>
+							<!-- /.form-group -->
+					</div>
+						<!-- /.col -->
+				</div>
+
+				<div class="row">					
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label> Placa Oficial:</label>
+							<div class="input-group">
+								<input type="text" class="form-control">
+								<span class="input-group-btn">
+									<a href="#" ><button type="button" class="btn btn-danger btn-flat">Buscar</button></a>
+								</span>
+							</div>
+						</div>
+						 <!-- /.form-group -->
+					</div>					
+					
+					<!-- /.col -->					
+				</div>
+				
+					</div>             
+				</div>
+				<!-- /.box-body -->   
+			</div>
+			<!-- /.box -->
+			
+			
+			<!-- Datos Vehiculo-->
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<h3 class="box-title">Datos del Vehículo</h3>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					</div>
+				</div>   
+				   <!-- /.box-header -->
+				<div class="box-body">
+					<div class="row">
+						<div class="col-xs-6">
+						<div class="form-group">
+								<label for="example4">*Cuenta con Placa:</label>
+								<div class="row">	
+									<div class="col-lg-6">
+										<div class="radio">
+											<label>
+											<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+											Si
+											</label>
+										</div>
+									</div>
+									<!-- /.col-lg-6 -->
+									<div class="col-lg-6">
+										<div class="radio">
+											<label>
+											<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+											No
+											</label>
+										</div>
+									</div>
+									<!-- /.col-lg-6 -->
+								</div>
+						</div>
+						</div>
+						<div class="col-xs-6">
+						<div class="form-group">
+								  <label for="example10">*Placa: </label> 
+								  <div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-automobile"></i></span>
+									<input type="text" class="form-control" id="example10">					
+								  </div>
+						</div>		  
+						</div>
+					</div>
+					<div class="row">
+							
+							<div class="col-xs-6">
+							<div class="form-group">
+								<label>*Expedida en:</label>
+								<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-map"></i></span>
+									<select class="form-control" >
+										<option selected="selected">Seleccione</option>
+										<option>Ciudad de México</option>
+										<option>Jalisco</option>
+										<option>Guerrero</option>
+										<option>Morelos</option>
+										<option>Morelos</option>
+									</select>
+								</div>
+								<!-- /.form-group -->
+							</div>	
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+								<label for="example12">Tarjeta de Circulación:  </label> 
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa  fa-credit-card"></i></span>
+										<input type="text" class="form-control" id="example12">					
+								    </div>
+								</div>
+						</div>
+						</div>
+						
+						<h4>Tipo de Vehículo</h4>
+						<hr/>
+						
+					   <div class="row">					
+						
+						<div class="col-xs-6">  
+						<div class="form-group">
+							<label>Tipo:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-ellipsis-v "></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Compacto</option>
+										<option>Taxi</option>
+										<option>Motocilcleta</option>
+										<option>Pesado</option>
+									</select>
+								</div>
+								  <!-- /.form-group -->
+						</div>		  
+						</div>	
+						<div class="col-xs-6">
+						<div class="form-group">
+							<label for="example4">Origen:</label>  
+								<div class="row">	
+									<div class="col-lg-6">
+										<div class="radio">
+											<label>
+											<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+											Nacional
+											</label>
+										</div>
+									</div>
+									<!-- /.col-lg-6 -->
+									<div class="col-lg-6">
+										<div class="radio">
+											<label>
+											<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+											Extranjero
+											</label>
+										</div>
+									</div>
+									<!-- /.col-lg-6 -->
+								</div>
+						</div>		
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-6">
+							<label>Marca: </label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-registered"></i></span>
+									<select class="form-control" >
+										<option selected="selected">Seleccione</option>
+										<option>Ferrari</option>
+										<option>Audi</option>
+										<option>Ford</option>
+										<option>Seat</option>
+										<option>Volvo</option>
+									</select>
+								</div>
+							    <!-- /.form-group -->
+						</div>
+						
+						<div class="col-xs-6"> 						
+							<label>Modelo: </label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-barcode"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Azul Marino</option>
+										<option>Azul Cielo</option>
+										<option>Blanco</option>
+										<option>Blanco/Metalico</option>
+										<option>Beige</option>
+										<option>Gris</option>
+										<option>Metalico</option>
+										<option>Plata</option>
+										<option>Rojo</option>
+										<option>Vino</option>
+										<option>Vino/Plata</option>
+										<option>Verde</option>
+									</select>
+								</div>
+								  <!-- /.form-group -->
+						</div>
+					</div></br>
+					
+					<div class="row">
+						<div class="col-xs-6">  
+							<label>Color: </label>
+							<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-paint-brush"></i></span>
+								<select class="form-control">
+									<option selected="selected">Seleccione</option>
+									<option>Azul Marino</option>
+									<option>Azul Cielo</option>
+									<option>Blanco</option>
+									<option>Blanco/Metalico</option>
+									<option>Beige</option>
+									<option>Gris</option>
+									<option>Metalico</option>
+									<option>Plata</option>
+									<option>Rojo</option>
+									<option>Vino</option>
+									<option>Vino/Plata</option>
+									<option>Verde</option>
+									  
+									</select>
+							</div>
+							<!-- /.form-group -->						
+						</div>
+						
+						<div class="col-xs-6">														
+								<label>Sector Público:</label>
+								<div class="row">	
+									<div class="col-lg-7"></div>
+									<div class="col-lg-2">
+										<input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+									</div>	
+								<div class="col-lg-3"></div>									
+								</div>					
+						</div>		
+						
+					</div>
+				</div>
+			</div>
+					
+			
+			
+	</section>
+	<!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+    <section class="col-lg-6 connectedSortable">
+	
+	
+	<!-- Ubicacion del automovil -->
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<h3 class="box-title">Ubicación de la Infracción</h3>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					</div>
+				</div>   
+				<!-- /.box-header -->
+				<div class="box-body">
+					<div class="row">
+						<div class="col-xs-6">
+						<div class="form-group">	
+							<label for="example1">*En la Calle: </label> 
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-long-arrow-up"></i></span>
+									<input type="text" class="form-control" id="example1">					
+								</div>
+						</div>		
+						</div>
+						<div class="col-xs-6">
+						<div class="form-group">
+							<label for="example1">*Entre la Calle: </label> 
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa  fa-arrows-v"></i></span>
+								<input type="text" class="form-control" id="example1">					
+							</div>
+						</div>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+						<div class="form-group">
+							<label for="example1">*Y en la calle: </label> 
+							  <div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-long-arrow-down"></i></span>
+								<input type="text" class="form-control" id="example1">					
+							  </div>
+						</div>	  
+						</div>
+						<div class="col-xs-6">
+						<div class="form-group">
+						  <label for="example1">*Con Dirección: </label> 
+						   <div class="input-group">
+							<span class="input-group-addon"><i class="fa  fa-exchange"></i></span>
+							<select class="form-control">
+								<option selected="selected">Seleccione</option>
+								<option>Noroeste</option>
+								<option>Nor-Oriente</option>
+								<option>Sur</option>
+								<option>Sur-Oriente</option>
+								<option>Sur-Poniente</option>
+								<option>Poniente</option>
+								<option>Nor-Poniente</option>
+							</select>			
+							</div>
+						</div>	
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-6">						
+							<label for="example1">*Frente al Número: </label> 
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
+								<input type="text" class="form-control" id="example1"></input>					
+							</div>
+						</div>
+						<div class="col-xs-6">						
+							<label for="example1">*Colonia: </label> 
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								<input type="text" class="form-control" id="example1"></input>					
+							</div>						
+						</div>
+						
+					</div>	
+					</br>	
+
+					<div class="row">						
+						<div class="col-xs-6">
+							<label for="exampl">*Delegación: </label> 
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								<select class="form-control">
+									<option selected="selected">Seleccione</option>
+									<option>Ciudad de México</option>
+									<option>Jalisco</option>
+									<option>Guerrero</option>
+									<option>Morelos</option>
+									<option>Morelos</option>
+								</select>				
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<label for="exampl">*Observé qué: </label> 
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-eye"></i></span>
+								<select class="form-control">
+									<option selected="selected">Seleccione</option>
+									<option>El Vehículo</option>
+									<option>El Conductor del Vehículo</option>
+								</select>				
+							</div>
+						</div>
+					</div>	
+						
+					<div class="row">						
+						<div class="col-xs-12">
+							<div class="form-group">
+								<br/>								
+								<textarea class="form-control" rows="2" placeholder="Descripción (Observé qué)" style="resize:none;"></textarea>
+							</div>
+							  <!-- /.form-group -->
+						</div>
+					</div>		
+					
+				</div>
+				<!-- /.row -->
+			</div>
+			
+			
+		<!-- Datos Del Infractor -->
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<h3 class="box-title">Datos del Infractor</h3>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					</div>
+				</div>   
+				<!-- /.box-header -->
+				<div class="box-body">					
+						<div class="row">
+							<div class="col-xs-6">
+							<div class="form-group">
+							  <label for="example7">*Apellido Paterno: </label> 
+							  <div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="text" class="form-control" id="example7">					
+							  </div>
+							  </div>
+							</div>
+						   <div class="col-xs-6">
+							  <div class="form-group">
+							  <label for="example8">*Apellido Materno:</label>
+							  <div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="text" class="form-control" id="example7">					
+							  </div>
+							  </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+							<div class="form-group">
+							  <label for="example9">*Nombre: </label> 
+							  <div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+								<input type="text" class="form-control" id="example9">					
+							  </div>
+							</div>
+							</div>
+							<div class="col-xs-6">
+							<div class="form-group">
+							    <label for="example8">RFC:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-building-o"></i></span>
+									<input type="text" class="form-control" id="example7">					
+								</div>
+							</div>	
+							</div>
+						</div>	
+						<div class="row">
+							<div class="col-xs-6">
+							<div class="form-group">
+								<label for="example7">Licencia: </label> 
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+									<input type="text" class="form-control" id="example7">					
+								</div>
+							</div>	
+							</div>
+						    <div class="col-xs-6">
+							  <div class="form-group">
+									<label>Tipo: </label>
+									<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-ellipsis-v"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>AOB-01</option>
+										<option>AOB-02</option>
+										<option>AOB-02</option>
+									</select>
+									</div>
+							<!-- /.form-group -->
+							</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-xs-6">  
+							<div class="form-group">
+								<label>Expedida en: </label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-map"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Ciudad de México</option>
+										<option>Jalisco</option>
+										<option>Guerrero</option>
+										<option>Hidalgo</option>
+										<option>Morelos</option>
+									</select>
+								</div>
+								  <!-- /.form-group -->
+							</div>	  
+							</div>
+						</div>	
+						
+						<h4 class="box-title">Dirección</h4>
+						<hr/>
+
+						<div class="row">
+							<div class="col-xs-6">
+							<div class="form-group">
+								<label for="example10">Calle: </label> 
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-long-arrow-up"></i></span>
+									<input type="text" class="form-control" id="example10">					
+								</div>
+							</div>
+							</div>	
+							<div class="col-xs-6">
+							<div class="form-group">
+								<label for="example11">Colonia:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+									<input type="text" class="form-control" id="example11">					
+								</div>
+							</div>	
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+							<div class="form-group">
+								<label for="example12">No. Ext:  </label> 
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
+									<input type="text" class="form-control" id="example12">					
+								</div>
+							</div>	
+							</div>
+							<div class="col-xs-6">
+							<div class="form-group">
+								<label for="example13">No. Int: </label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
+									<input type="text" class="form-control" id="example13">					
+								</div>
+							</div>	
+							</div>
+						</div>
+						
+						
+						<div class="row">
+							<div class="col-xs-6">
+							 <div class="form-group"> 
+									<label>Estado: </label>
+									<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-map"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Ciudad de México</option>
+										<option>Jalisco</option>
+										<option>Guerrero</option>
+										<option>Morelos</option>
+										<option>Morelos</option>
+									</select>
+									</div>
+							<!-- /.form-group -->
+							</div>
+							</div>
+							<div class="col-xs-6">  
+							<div class="form-group">		
+									<label>Delegación / Municipio :</label>
+									<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+									<select class="form-control">
+										<option selected="selected">Seleccione</option>
+										<option>Coyoacán</option>
+										<option>Magdalena Contreras</option>
+									</select>
+								</div>
+								  <!-- /.form-group -->
+								</div>  
+								</div>
+						</div>	
+				</div>
+			</div>
+			
+			
+			
+			
+			
+										
+</section>
+	</div>
+	
+	<div class="row">
+
+	<section class="col-lg-12 connectedSortable">
+			
+			<!-- Fundamentación Infracción -->
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<h3 class="box-title">Fundamentación de la Infracción</h3>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					</div>
+				</div>   
+				<!-- /.box-header -->
+				<div class="box-body">
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label>*Artículo: </label>								
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-gavel"></i></span>	
+										<select id="select_articulo" class="form-control" onchange="cambiarFraccion()">
+											<option selected="selected">Seleccione</option>
+											<option>Art 5</option>
+											<option>Art 6</option>
+											<option>Art 7</option>
+											<option>Art 8</option>
+											<option>Art 9</option>
+											<option>Art 11</option> 
+											<option>Art 12</option>
+											<option>Art 13</option>
+											<option>Art 14</option>
+											<option>Art 15</option>
+										</select>
+								</div>	
+							</div>
+							<!-- /.form-group -->
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label>* Fracción - Inciso - Párrafo : </label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-hand-o-right"></i></span>								
+								<select id="select_fraccion" class="form-control" onchange="cambiarMotivacion()">
+									  <option value="0" selected="selected">Seleccione</option>
+									  <option value="1">Fraccion I Inciso ----- Parrafo -----</option>
+									  <option>Fraccion II Inciso ----- Parrafo -----</option>
+									  <option>Fraccion II Inciso ----- Parrafo -----</option>
+									  <option>Fraccion III Inciso ----- Parrafo -----</option>
+									  <option>Fraccion IV Inciso ----- Parrafo -----</option>
+									  <option>Fraccion V Inciso ----- Parrafo -----</option>
+									  <option>Fraccion VI Inciso ----- Parrafo -----</option>
+									  <option>Fraccion VII Inciso ----- Parrafo -----</option>
+									  <option>Fraccion VIII Inciso ----- Parrafo -----</option>
+									  <option>Fraccion IX Inciso ----- Parrafo -----</option>
+								</select>
+							</div>	
+							</div>
+							<!-- /.form-group -->
+						</div>
+						<!-- /.col -->
+					</div> 
+					<div class="row">
+						
+						<div class="col-xs-4">		
+							<div class="form-group">
+								<label>* Es una Violación a la Ley del Transporte:</label>
+							</div>
+						</div>	
+						<div class="col-xs-2">	
+								<div class="form-group">
+									<div class="row">	
+										<div class="col-lg-6">
+											<div class="radio">
+												<label>
+												<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+												SI
+												</label>
+											</div>
+										</div>
+										<!-- /.col-lg-6 -->
+										<div class="col-lg-6">
+											<div class="radio">
+												<label>
+												<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+												NO
+												</label>
+											</div>
+										</div>
+									<!-- /.col-lg-6 -->
+								</div>
+								</div>
+						</div>	
+					
+						<div class="col-xs-6">							
+							<label>Sanción:</label>										
+							<b><p id="infra_sancion" style="color: #3c8dbc;"></p></b>
+						</div>   
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label>Motivación de la Infracción : </label>
+								<textarea id="infra_motivo" class="form-control" rows="3" style="resize:none;"></textarea>
+							</div>
+							  <!-- /.form-group -->
+						</div>
+						
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label>Motivación Completa : </label>
+								<textarea class="form-control" rows="3" style="resize:none;"></textarea>
+							</div>
+							  <!-- /.form-group -->
+						</div>
+					</div> 
+					
+					<div class="row">
+						<div class="col-xs-6"></div>
+						<div class="col-xs-1">
+							<button class="btn btn-danger" id="btnGuardarDatos">Guardar</button>  	
+						</div>
+						<div class="col-xs-5"></div>
+						
+					</div> 
+					<!-- /.col -->
+				</div>
+			</div>
+				<!-- /.box -->
+			  
+			<!-- /.box --> 
+		</section>
+
+        </div>
+		
+	</form>	
+		<!-- Sanción Infracción -->
+		
+		
+		<!-- /.box --> 
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer"> </footer>
+
+  
+  <div class="control-sidebar-bg"></div>
+  
+</div>
+<!-- ./wrapper -->
+
+
+<!-- jQuery 2.2.0 -->
+<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="dist/js/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+ <!-- Bootstrap WYSIHTML5 -->
+ <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- bootstrap datepicker -->
+<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+
+
+<!-- Page script -->
+<script>
+  $(function () {
+   
+    //Datemask dd/mm/yyyy
+    $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+    //Datemask2 mm/dd/yyyy
+    $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+    //Money Euro
+    $("[data-mask]").inputmask();
+   
+    //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
+    //Timepicker
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+	
+		
+  });
+  
+  function cambiarFraccion(){
+	$("#select_fraccion").val("1");
+	$("#infra_motivo").val("");
+	$("#infra_sancion").html("");
+  }
+  
+  function cambiarMotivacion(){
+	var motivo="TRATANDOSE DE VEHÍCULOS CON PLACAS DE MATRÍCULA EXTRANJERA, POR NO PORTAR LOS DOCUMENTOS OFICIALES EN LOS QUE SE DESCRIBAN LAS CARACTERÍSTICAS DEL VEHÍCULO Y SE ACREDITE LA LEGAL ESTANCIA EN EL  PAÍS." 
+	var sancion= "Multa de 5 unidades de cuenta en la Ciudad de México";
+	$("#infra_motivo").val(motivo);
+	$("#infra_sancion").html(sancion);
+	
+  }
+</script>
+
+</body>
+</html>
